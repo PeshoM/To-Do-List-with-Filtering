@@ -10,7 +10,7 @@ function App() {
   return (
     <div className={styles.container}>
       <TodoInput todos={todos} setTodos={setTodos} />
-      <TodoList todos={todos} />
+      <TodoList todos={todos} setTodos={setTodos} />
       <FilteringButtons />
     </div>
   );
