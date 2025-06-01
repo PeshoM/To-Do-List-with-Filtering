@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { TodoInputProps } from "../models/todo.interface";
 import styles from "../styles/todoInput.module.css";
+import { v4 as uuidv4 } from 'uuid';
 
 const TodoInput = ({ todos, setTodos }: TodoInputProps) => {
   const [inputValue, setInputValue] = useState("");
@@ -13,7 +14,7 @@ const TodoInput = ({ todos, setTodos }: TodoInputProps) => {
     if (inputValue.trim() === "") return;
     setTodos([
       ...todos,
-      { id: todos.length + 1, text: inputValue, completed: false },
+      { id: uuidv4(), text: inputValue, completed: false },
     ]);
     setInputValue("");
   };
