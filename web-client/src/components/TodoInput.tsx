@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TodoInputProps } from "../models/todo.interface";
+import styles from "../styles/todoInput.module.css";
 
 const TodoInput = ({ todos, setTodos }: TodoInputProps) => {
   const [inputValue, setInputValue] = useState("");
@@ -9,16 +10,26 @@ const TodoInput = ({ todos, setTodos }: TodoInputProps) => {
   };
 
   const handleAddTodo = () => {
+    if (inputValue.trim() === "") return;
     setTodos([
       ...todos,
       { id: todos.length + 1, text: inputValue, completed: false },
     ]);
+    setInputValue("");
   };
 
   return (
-    <div>
-      <input type="text" value={inputValue} onChange={handleInputChange} />
-      <button onClick={handleAddTodo}>Add</button>
+    <div className={styles.container}>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={handleInputChange}
+        className={styles.input}
+        placeholder="Add a new todo..."
+      />
+      <button onClick={handleAddTodo} className={styles.button}>
+        Add
+      </button>
     </div>
   );
 };
