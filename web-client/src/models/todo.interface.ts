@@ -14,12 +14,16 @@ export interface TodoInputProps {
 export interface TodoListProps {
   todos: Todo[];
   setTodos: (todos: Todo[]) => void;
+  onStatusChange: (id: string, completed: boolean) => void;
+  onDelete: (id: string) => void;
 }
 
 export interface TodoItemProps {
   todo: Todo;
   todos: Todo[];
   setTodos: (todos: Todo[]) => void;
+  onStatusChange: (id: string, completed: boolean) => void;
+  onDelete: (id: string) => void;
 }
 
 export type Filter = "all" | "active" | "completed";
