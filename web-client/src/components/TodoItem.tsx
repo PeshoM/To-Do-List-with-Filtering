@@ -1,12 +1,4 @@
-export type Todo = {
-  id: number;
-  text: string;
-  completed: boolean;
-};
-
-export type TodoItemProps = {
-  todo: Todo;
-};
+import { TodoItemProps } from "../models/todo.interface";
 
 const TodoItem = ({ todo }: TodoItemProps) => {
   return (

@@ -1,6 +1,9 @@
-import TodoItem, { Todo }from "./TodoItem";
+import { Todo, TodoListProps } from "../models/todo.interface";
+import TodoItem from "./TodoItem";
 
-const TodoList = ({ todos }: { todos: Todo[] }) => {
+
+
+const TodoList = ({ todos }: TodoListProps) => {
   return (
     <div>
       {todos.map((todo: Todo) => (
@@ -11,4 +14,3 @@ const TodoList = ({ todos }: { todos: Todo[] }) => {
 };
 
 export default TodoList;
-

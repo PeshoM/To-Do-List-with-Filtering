@@ -1,10 +1,5 @@
 import { useState } from "react";
-import { Todo } from "./TodoItem";
-
-export type TodoInputProps = {
-  todos: Todo[];
-  setTodos: (todos: Todo[]) => void;
-};
+import { TodoInputProps } from "../models/todo.interface";
 
 const TodoInput = ({ todos, setTodos }: TodoInputProps) => {
   const [inputValue, setInputValue] = useState("");
