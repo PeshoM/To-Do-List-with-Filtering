@@ -13,10 +13,35 @@
 }
 
 .checkbox {
+  position: relative;
   margin-right: 12px;
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  border: 2px solid #4a90e2;
+  border-radius: 4px;
+  background-color: white;
+  transition: all 0.2s ease;
+}
+
+.checkbox:checked {
+  background-color: #4a90e2;
+}
+
+.checkbox:checked::after {
+  content: "✓";
+  position: absolute;
+  color: white;
+  font-size: 16px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkbox:hover {
+  border-color: #357abd;
 }
 
 .text {
