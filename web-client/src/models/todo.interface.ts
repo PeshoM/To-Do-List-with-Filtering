@@ -1,21 +1,36 @@
-export type Todo = {
+import { Dispatch, SetStateAction } from "react";
+
+export interface Todo {
   id: string;
   text: string;
   completed: boolean;
-};
+}
 
-export type TodoInputProps = {
+export interface TodoInputProps {
   todos: Todo[];
   setTodos: (todos: Todo[]) => void;
-};
+}
 
-export type TodoItemProps = {
-  setTodos: (todos: Todo[]) => void;
+export interface TodoListProps {
   todos: Todo[];
+  setTodos: (todos: Todo[]) => void;
+}
+
+export interface TodoItemProps {
   todo: Todo;
-};
+  todos: Todo[];
+  setTodos: (todos: Todo[]) => void;
+}
 
-export type TodoListProps = {
-    setTodos: (todos: Todo[]) => void;
-    todos: Todo[];
-};
+export type Filter = "all" | "active" | "completed";
+
+export interface FilteringButtonsProps {
+  filter: Filter;
+  setFilter: Dispatch<SetStateAction<Filter>>;
+}
+
+export enum FILTER_STATUS {
+  ALL = "all",
+  ACTIVE = "active",
+  COMPLETED = "completed",
+}
